@@ -1,4 +1,4 @@
-import { categorySchema } from '../schemas/index.js';
+import { categorySchema, productSchema } from '../schemas/index.js';
 
 const validate = (schema) => (req, res, next) => {
     const { error } = schema.validate(req.body);
@@ -9,3 +9,5 @@ const validate = (schema) => (req, res, next) => {
 };
 
 export const validateCategory = validate(categorySchema);
+export const validateProduct = validate(productSchema);
+

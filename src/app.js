@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import categoryRoutes from './routes/categoryRoutes.js';
+import productRoutes from './routes/productRoutes.js';
 import logger from './utils/logger.js';
 import errorHandler from './middlewares/errorMiddleware.js';
 
@@ -19,6 +20,7 @@ connectDB();
 
 // Routes
 app.use('/categories', categoryRoutes);
+app.use('/products', productRoutes);
 
 // Error handling middleware
 app.use(errorHandler);
